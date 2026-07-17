@@ -11,14 +11,14 @@ General information about the hardware used:
 The configuration of my pools is as follows:
 ```
 boot (Stripe)
-└── VDEV 1 x DISK NvMe 250 GB (TrueNAS)
+└─ VDEV 1 x DISK NvMe 250 GB (TrueNAS)
 
 tank (Stripe made of 2 x MIRROR)
-├── VDEV MIRROR 2 x HDD 4 TB
-└── VDEV MIRROR 2 x HDD 8 TB
+├─ VDEV MIRROR 2 x HDD 4 TB
+└─ VDEV MIRROR 2 x HDD 8 TB
 
 apps (Stripe)
-└── VDEV 1 x DISK NvMe 1 Tb
+└─ VDEV 1 x DISK NvMe 1 TB
 ```
 
 This guide does not cover the TrueNAS installation process. Instead, it explains how to configure it immediately after installation.
@@ -28,3 +28,4 @@ The TrueNAS version for which this manual was written is **25.10.4**.
 # Steps:
 
 ## 1. [Initial setup (set localization settings, create your own admin user)](./truenas-setup/01_Initial_Setup.md)
+## 2. [Pools configuration (create all pools and use the "apps" pool via TrueNAS Apps)](./truenas-setup/02_Pools_Configuration.md)
