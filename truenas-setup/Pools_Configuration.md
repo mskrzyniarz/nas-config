@@ -1,13 +1,5 @@
-<table style="width: 100%; margin-bottom: 40px;">
-  <tr>
-    <td style="line-height: 1.4em; padding: 0; border-right: 1px solid gray">
-      <a href="../README.md">← Back to the main guide's steps</a>
-    </td>
-    <td style="line-height: 1.4em; padding: 0; text-align: right">
-      <a href="../ugreen-dxp4800-gt/LED_Controller_Support.md">Next step: UGREEN LED Controller support →</a>
-    </td>
-  </tr>
-</table>
+[← Back to the main guide's steps](../README.md) \
+<sup>____________</sup>
 
 # TrueNAS Pools Configuration
 
@@ -23,12 +15,13 @@
 
     Encryption: `unchecked` (disabled)
 
-    > [!NOTE]
-    > If there is a warning "Warning: There are 2 disks available that have non-unique serial numbers. Non-unique serial numbers can be caused by a cabling issue and adding such disks to a pool can result in lost data."
-    >
-    > Select `Don't Allow`
+> [!NOTE]
+> If there is a warning "Warning: There are 2 disks available that have non-unique serial numbers. Non-unique serial numbers can be caused by a cabling issue and adding such disks to a pool can result in lost data."
+>
+> Select `Don't Allow`
 
-    Press the `Next` button
+
+- Press the `Next` button
 
 - In section `Data`, set:
 
@@ -61,12 +54,12 @@
 
     Encryption: `unchecked` (disabled)
 
-    > [!NOTE]
-    > If there is a warning "Warning: There are 2 disks available that have non-unique serial numbers. Non-unique serial numbers can be caused by a cabling issue and adding such disks to a pool can result in lost data."
-    >
-    > Select `Don't Allow`
+> [!NOTE]
+> If there is a warning "Warning: There are 2 disks available that have non-unique serial numbers. Non-unique serial numbers can be caused by a cabling issue and adding such disks to a pool can result in lost data."
+>
+> Select `Don't Allow`
 
-    Press the `Next` button
+- Press the `Next` button
 
 - In section `Data`, set:
 
@@ -91,19 +84,11 @@
 
 - Select the `apps` pool inside the dialog that appeared and press the `Choose` button
 
-    > [!NOTE]
-    > From now on, all applications will be installed in the `apps` pool.
-    >
-    > Also TrueNAS automatically mounted the Docker infrastructure under `/mnt/.ix-apps`.
+> [!NOTE]
+> From now on, all applications will be installed in the `apps` pool. \
+> Also TrueNAS automatically mounted the Docker infrastructure under `/mnt/.ix-apps`.
 
-
-<table style="width: 100%; margin-top: 60px;">
-  <tr>
-    <td style="line-height: 1.4em; padding: 0; border-right: 1px solid gray">
-      <a href="../README.md">← Back to the main guide's steps</a>
-    </td>
-    <td style="line-height: 1.4em; padding: 0; text-align: right">
-      <a href="../ugreen-dxp4800-gt/LED_Controller_Support.md">Next step: UGREEN LED Controller support →</a>
-    </td>
-  </tr>
-</table>
+<p align="right">__________</p>
+<p align="right">
+  <a href="../ugreen-dxp4800-gt/LED_Controller_Support.md">Next step: UGREEN LED Controller support →</a>
+</p>

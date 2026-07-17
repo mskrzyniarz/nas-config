@@ -25,12 +25,12 @@ This guide does not cover the TrueNAS installation process. Instead, it explains
 
 The TrueNAS version for which this manual was written is **25.10.4**.
 
-# Steps:
+## Steps:
 
-## 1. [Initial setup (set localization settings, create your own admin user)](./truenas-setup/Initial_Setup.md)
+### 1. [Initial setup (set localization settings, create your own admin user)](./truenas-setup/Initial_Setup.md)
 
-## 2. [Pools configuration (create all pools and use the "apps" pool via TrueNAS Apps)](./truenas-setup/Pools_Configuration.md)
+### 2. [Pools configuration (create all pools and use the "apps" pool via TrueNAS Apps)](./truenas-setup/Pools_Configuration.md)
 
-## 3. [UGREEN LED Controller support (adding the ability to control LED lights on the front panel of the NAS)](./ugreen-dxp4800-gt/LED_Controller_Support.md)
+### 3. [UGREEN LED Controller support (adding the ability to control LED lights on the front panel of the NAS)](./ugreen-dxp4800-gt/LED_Controller_Support.md)
 
-## 4. [SMB configuration (attach a network drive on Windows OS to access files from NAS)](./truenas-setup/Pools_Configuration.md)
+### 4. [SMB configuration (attach a network drive on Windows OS to access files from NAS)](./truenas-setup/Pools_Configuration.md)

@@ -1,13 +1,5 @@
-<table style="width: 100%; margin-bottom: 40px;">
-  <tr>
-    <td style="line-height: 1.4em; padding: 0; border-right: 1px solid gray">
-      <a href="../README.md">← Back to the main guide's steps</a>
-    </td>
-    <td style="line-height: 1.4em; padding: 0; text-align: right">
-      <a href="./Pools_Configuration.md">Next step: Pools configuration →</a>
-    </td>
-  </tr>
-</table>
+[← Back to the main guide's steps](../README.md) \
+<sup>____________</sup>
 
 # Initial TrueNAS Setup
 
@@ -19,10 +11,9 @@
 
 - Set `Language` to: `English (en)`.
 
-    > [!IMPORTANT   ]
-    > Most instructions or troubleshooting methods on the Internet are in English.
-    > 
-    > I also use the English names for pages, options, labels, etc., throughout the whole manual.
+> [!IMPORTANT]
+> Most instructions or troubleshooting methods on the Internet are in English. \
+> I also use the English names for pages, options, labels, etc., throughout the whole manual.
 
 - Other settings set based on your localization/preferences.
 
@@ -44,14 +35,7 @@
 > [!TIP]
 > Optional (but recommended): log in as the new admin user and remove the `truenas_admin` user (as an additional security measure)
 
-
-<table style="width: 100%; margin-top: 60px;">
-  <tr>
-    <td style="line-height: 1.4em; padding: 0; border-right: 1px solid gray">
-      <a href="../README.md">← Back to the main guide's steps</a>
-    </td>
-    <td style="line-height: 1.4em; padding: 0; text-align: right">
-      <a href="./Pools_Configuration.md">Next step: Pools configuration →</a>
-    </td>
-  </tr>
-</table>
+<p align="right">__________</p>
+<p align="right">
+  <a href="./Pools_Configuration.md">Next step: Pools configuration →</a>
+</p>
