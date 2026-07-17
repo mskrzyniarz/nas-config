@@ -4,13 +4,12 @@
       <a href="../README.md">← Back to the main guide's steps</a>
     </td>
     <td style="line-height: 1.4em; padding: 0; text-align: right">
-      <a href="../truenas-setup/SMB_Configuration.md">Next step: SMB configuration →</a>
+      <a href="../truenas-setup/next-page-url">Next step: ??? →</a>
     </td>
   </tr>
 </table>
 
-# UGREEN LED controller support
-_This file contains instructions on how to add UGREEN LED controller support to TrueNAS._
+# SMB Configuration
 
 <table style="width: 100%; margin-top: 40px;">
   <tr>
@@ -18,7 +17,8 @@ _This file contains instructions on how to add UGREEN LED controller support to 
       <a href="../README.md">← Back to the main guide's steps</a>
     </td>
     <td style="line-height: 1.4em; padding: 0; text-align: right">
-      <a href="../truenas-setup/SMB_Configuration.md">Next step: SMB configuration →</a>
+      <a href="../truenas-setup/next-page-url">Next step: ?? →</a>
     </td>
   </tr>
 </table>
+
