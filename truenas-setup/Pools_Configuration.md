@@ -1,5 +1,4 @@
-[← Back to the main guide's steps](../README.md) \
-<sup>____________</sup>
+[← Back to the main guide's steps](../README.md)
 
 # TrueNAS Pools Configuration
 
@@ -88,7 +87,7 @@
 > From now on, all applications will be installed in the `apps` pool. \
 > Also TrueNAS automatically mounted the Docker infrastructure under `/mnt/.ix-apps`.
 
-<p align="right">__________</p>
+<p align="right"><sub>____________</sub></p>
 <p align="right">
   <a href="../ugreen-dxp4800-gt/LED_Controller_Support.md">Next step: UGREEN LED Controller support →</a>
 </p>

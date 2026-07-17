@@ -1,5 +1,4 @@
-[← Back to the main guide's steps](../README.md) \
-<sup>____________</sup>
+[← Back to the main guide's steps](../README.md)
 
 # Initial TrueNAS Setup
 
@@ -35,7 +34,7 @@
 > [!TIP]
 > Optional (but recommended): log in as the new admin user and remove the `truenas_admin` user (as an additional security measure)
 
-<p align="right">__________</p>
+<p align="right"><sub>____________</sub></p>
 <p align="right">
   <a href="./Pools_Configuration.md">Next step: Pools configuration →</a>
 </p>

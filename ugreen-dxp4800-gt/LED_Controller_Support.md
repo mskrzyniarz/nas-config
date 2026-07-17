@@ -1,5 +1,4 @@
-[← Back to the main guide's steps](../README.md) \
-<sup>____________</sup>
+[← Back to the main guide's steps](../README.md)
 
 # UGREEN LED controller support
 _This file contains instructions on how to add UGREEN LED controller support to TrueNAS._
