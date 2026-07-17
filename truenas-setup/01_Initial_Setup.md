@@ -8,9 +8,9 @@
 
 - Set `Language` to: `English (en)`.
          
-    **Most instructions or troubleshooting methods on the Internet are in English.**
+    **_Most instructions or troubleshooting methods on the Internet are in English._**
 
-     **I also use the English names for pages, options, labels, etc., throughout the whole manual.**
+     **_I also use the English names for pages, options, labels, etc., throughout the whole manual._**
 
 - Other settings set based on your localization/preferences.
 
