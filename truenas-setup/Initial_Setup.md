@@ -20,16 +20,24 @@
 ## 2. Create your own admin user
 
 - Open page: `Credentials` / `Users`
+  
+- Press the `Add` button;
+  - Set your `Username`;
+  - `Allow Access` to `SMB Access` and `TrueNAS Access` (with `Full Admin` rights);
+  - Set a strong `Password`;
+  - Set your `Full Name`;
+  - Leave the rest of the settings at their defaults.
 
-- Press the `Add` button
+> [!TIP]
+> Set the permissions as in the picture below, you can always change them later if necessary.
 
-- Set your username, access rights, a strong password, and your full name. Leave the rest of the settings at their defaults.
+![Add Admin User](../images/add-admin-user.png)
 
-    > [!TIP]
-    > Set the permissions as in the picture below, you can always change them later if necessary.
 
-    ![Add Admin User](../images/add-admin-user.png)
-
+> [!NOTE]
+> By default, all users added to TrueNAS are automatically added to `builtin_users` user group. \
+> By default, all admin users added to TrueNAS are automatically added to `builtin_administrators` user group. \
+> So your newly created admin user will be added to these two groups.
 
 > [!TIP]
 > Optional (but recommended): log in as the new admin user and remove the `truenas_admin` user (as an additional security measure)
