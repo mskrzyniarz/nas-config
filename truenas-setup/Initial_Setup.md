@@ -2,6 +2,11 @@
 
 # Initial TrueNAS Setup
 
+**Table of Contents**   
+[1. Setting localization](#1-setting-localization)  
+[2. Create your own admin user](#2-create-your-own-admin-user)  
+
+
 ## 1. Setting localization
 
 - Open page: `System` / `General Settings`.

@@ -2,6 +2,11 @@
 
 # TrueNAS Pools Configuration
 
+**Table of Contents**   
+[1. Creating a `tank` pool](#1-creating-a-tank-pool)  
+[2. Creating a `apps` pool](#2-creating-a-apps-pool)  
+[3. Set the `apps` pool as the pool that native TrueNAS Apps will use](#3-set-the-apps-pool-as-the-pool-that-native-truenas-apps-will-use)  
+
 ## 1. Creating a `tank` pool
 
 - Open `Storage` page.
