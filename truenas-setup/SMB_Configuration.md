@@ -4,7 +4,12 @@
 
 **Table of Contents**   
 [1. Adding new user](#1-adding-new-user)  
-[2. Creating a shareable dataset](#2-creating-a-shareable-dataset)
+[2. Creating a shareable dataset](#2-creating-a-shareable-dataset)  
+[3. SMB configuration](#3-smb-configuration)  
+[4. Access from Windows OS](#4-access-from-windows-os)  
+&nbsp; &nbsp; [4.1. Access from Windows OS - Troubleshooting](#41-access-from-windows-os---troubleshooting)  
+[5. Setting the snapshots](#5-setting-the-snapshots)  
+
 
 The file describes an example of:  
 \- adding a user to whom we want to grant access to files on our NAS  
@@ -132,10 +137,12 @@ tank [POOL]
  
   Method 1:
   - Open `Dashboard` page and look for the `Address` widget
+
   ![Address Widget](../images/addess-widget.png)
 
   Method 2:
   - Open `System` / `Network` page and and find your IP address in the `Interfaces` widget.
+
   ![Network Interfaces widget](../images/network-interfaces-widget.png)
 
 - In the Windows OS, open the File Explorer.
@@ -170,11 +177,11 @@ tank [POOL]
 
   ![Network drive on Windows OS](../images/network-drive-on-windows.png)
 
-### 4.1 Access from Windows OS - Troubleshooting
+### 4.1. Access from Windows OS - Troubleshooting
 
-If you cannot connect a network drive on Windows OS and get e.g. the error "Access is denied", try these solutions:
+**If you cannot connect a network drive on Windows OS and get e.g. the error "Access is denied", try these solutions:**
 
-◼ **Check which version of SMB protocol is enabled, for most of the people v1 is not working.**
+#### :one: Check which version of SMB protocol is enabled, for most of the people v1 is not working.
 - Open PowerShell terminal and enter:
   ```ps
   Get-SmbServerConfiguration | Format-List EnableSMB*
@@ -198,9 +205,8 @@ If you cannot connect a network drive on Windows OS and get e.g. the error "Acce
   - The confirmation message should be displayed ("Are you sure you want to perform this action?"). \
   Type in `Y` and press `Enter` to confirm the action.
 
-<br />
 
-◼ **Sometimes the connection is restricted by user Group Policy (`Network security: LAN Manager authentication level`).**
+#### :two: Sometimes the connection is restricted by user Group Policy (`Network security: LAN Manager authentication level`).**
 
   - Use shortcut `Ctrl` + `R` or open `Start` menu and select `Run` option.
   - Type in `gpedit.msc` and press `Enter`.
@@ -229,7 +235,6 @@ If you cannot connect a network drive on Windows OS and get e.g. the error "Acce
 ```
 TODO: describe in more detail how to set snapshots for user data backups, recommended settings, etc.
 ```
-
 
 <p align="right"><sub>____________</sub></p>
 <p align="right">
