@@ -1,0 +1,13 @@
+services:
+  uptime-kuma:
+    container_name: kuma
+    image: louislam/uptime-kuma:latest
+    ports:
+      - 3001:3001
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /mnt/tank/configs/uptime-kuma:/app/data
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Warsaw
+

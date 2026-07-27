@@ -1,0 +1,22 @@
+services:
+  code-server:
+    container_name: code-server
+    image: lscr.io/linuxserver/code-server:latest
+    ports:
+      - 8443:8443
+    volumes:
+      - /mnt/tank/configs/code-server:/config
+      - /mnt/tank:/config/workspace
+    restart: unless-stopped
+    environment:
+      - PUID=568
+      - PGID=568
+      - TZ=Europe/Warsaw
+      - PASSWORD=EnterYourCodeServerPassword
+      # - PASSWORD=password #optional
+      # - HASHED_PASSWORD= #optional
+      # - SUDO_PASSWORD=password #optional
+      # - SUDO_PASSWORD_HASH= #optional
+      # - PROXY_DOMAIN=code-server.my.domain #optional
+      # - DEFAULT_WORKSPACE=/config/workspace #optional
+      # - PWA_APPNAME=code-server #optional

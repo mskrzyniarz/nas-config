@@ -7,6 +7,10 @@
 
 ## 1. Storage structure
 
+
+
+/mnt/tank/configs/dozzle
+
 Here is my datasets structure
 
 ```js
@@ -18,11 +22,11 @@ tank [POOL]
 |   ├─ jellyfin [DATASET] - Dataset Preset: `Apps`
 |   ├─ jellyseerr [DATASET] - Dataset Preset: `Apps`
 |   ├─ prowlarr [DATASET] - Dataset Preset: `Apps`
+|   ├─ qbittorrent [DATASET] - Dataset Preset: `Apps`
 |   ├─ radarr [DATASET] - Dataset Preset: `Apps`
 |   ├─ recyclarr [DATASET] - Dataset Preset: `Apps`
 |   ├─ sonarr [DATASET] - Dataset Preset: `Apps`
-|   ├─ tdarr [DATASET] - Dataset Preset: `Apps`
-|   └─ qbittorrent [DATASET] - Dataset Preset: `Apps`
+|   └─ tdarr [DATASET] - Dataset Preset: `Apps`
 |
 ├── media [DATASET] - Dataset Preset: `Apps`
 |   ├─ books [FOLDER]
