@@ -38,7 +38,6 @@
 
 ![Add Admin User](../images/add-admin-user.png)
 
-
 > [!NOTE]
 > By default, all users added to TrueNAS are automatically added to `builtin_users` user group. \
 > By default, all admin users added to TrueNAS are automatically added to `builtin_administrators` user group. \

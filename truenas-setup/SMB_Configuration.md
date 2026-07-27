@@ -238,5 +238,5 @@ TODO: describe in more detail how to set snapshots for user data backups, recomm
 
 <p align="right"><sub>____________</sub></p>
 <p align="right">
-  <a href="../truenas-setup/next-page-url">Next step: ??? →</a>
+  <a href="./Installing_Useful_Apps.md">Next step: Installing useful apps →</a>
 </p>
