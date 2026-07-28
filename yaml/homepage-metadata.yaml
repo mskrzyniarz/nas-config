@@ -1,0 +1,36 @@
+"custom_app": true
+"human_version": "v1.13.3"
+"metadata":
+  "app_version": "v1.13.3"
+  "capabilities": []
+  "categories":
+  - "productivity"
+  "changelog_url": "https://github.com/gethomepage/homeapge/releases"
+  "description": "Homepage is a modern, secure, highly customizable application dashboard."
+  "home": "https://gethomepage.dev/"
+  "host_mounts":
+  - "description": "Docker socket"
+    "host_path": "/var/run/docker.sock"
+  # "icon": "https://media.sys.truenas.net/apps/homepage/icons/icon.png"
+  "icon": "file:///mnt/tank/configs/system/app-icons/homepage-app-icon.png"
+  "keywords":
+  - "dashboard"
+  "maintainers": []
+  "name": "homepage"
+  "run_as_context":
+  - "description": "Container [homepage] runs as non-root user and group."
+    "gid": 568
+    "group_name": "Host group is [apps]"
+    "uid": 568
+    "user_name": "Host user is [apps]"
+  "sources":
+  - "https://gethomepage.dev/"
+  - "https://github.com/gethomepage/homepage"
+  "title": "Homepage"
+  "train": "community"
+  "version": "1.13.3"
+"migrated": false
+"notes": null
+"portals":
+  "Web UI": "http://0.0.0.0:3000"
+"version": "1.0.0"

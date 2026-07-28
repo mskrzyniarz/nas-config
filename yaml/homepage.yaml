@@ -1,0 +1,14 @@
+services:
+  homepage:
+    container_name: homepage
+    image: ghcr.io/gethomepage/homepage:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /mnt/tank/configs/homepage:/app/config
+    environment:
+      TZ: Europe/Warsaw
+      HOMEPAGE_ALLOWED_HOSTS: 192.168.1.50 # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
+      PUID: 568
+      PGID: 568

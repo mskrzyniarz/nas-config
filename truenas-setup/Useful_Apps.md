@@ -5,9 +5,18 @@
 **Table of Contents**   
 [1. List of applications](#1-list-of-applications)  
 [2. Dozzle](#2-dozzle---installation-and-configuration)  
+&nbsp; &nbsp; [2.1 Installing Dozzle via native TrueNAS Apps](#21-installing-dozzle-via-native-truenas-apps)  
+&nbsp; &nbsp; [2.2 Installing Dozzle via YAML](#22-installing-dozzle-via-yaml)  
 [3. Uptime Kuma](#3-uptime-kuma---installation-and-configuration)  
+&nbsp; &nbsp; [3.1 Installing Uptime Kuma via native TrueNAS Apps](#31-installing-uptime-kuma-via-native-truenas-apps)  
+&nbsp; &nbsp; [3.2 Installing Uptime Kuma via YAML](#32-installing-uptime-kuma-via-yaml)  
+&nbsp; &nbsp; [3.3 Configuration of Uptime Kuma](#33-configuration-of-uptime-kuma)  
 [4. FileBrowser Quantum](#4-filebrowser-quantum---installation-and-configuration)  
 [5. Code Server](#5-code-server---installation-and-configuration)  
+&nbsp; &nbsp; [5.1 Installing Code Server via native TrueNAS Apps](#51-installing-code-server-via-native-truenas-apps)  
+&nbsp; &nbsp; [5.2 Installing Code Server via YAML](#52-installing-code-server-via-yaml)  
+&nbsp; &nbsp; [5.3 Access your location directory from Code Server](#53-access-your-location-directory-from-code-server)  
+&nbsp; &nbsp; [5.4 My Code Server preferences and installed extensions](#54-my-code-server-preferences-and-installed-extensions)  
 [6. Homepage](#6-homepage---installation-and-configuration)  
 
 
@@ -36,7 +45,7 @@ tank [POOL]
    └─ dozzle [DATASET] - Dataset Preset: `Apps`
 ```
 
-### 2.1 Installing Dozzle via native TrueNAS Apps.
+### 2.1 Installing Dozzle via native TrueNAS Apps
 
 Install Dozzle via TrueNAS Apps with such configuration:
 
@@ -51,7 +60,7 @@ Install Dozzle via TrueNAS Apps with such configuration:
 
 ![Dozzle App Configuration](../images/dozzle-app-config.png)
 
-### 2.3 Installing Dozzle via YAML. 
+### 2.2 Installing Dozzle via YAML 
 
 Use this YAML code to install Dozzle:
 
@@ -93,7 +102,7 @@ tank [POOL]
 ```
 
 
-### 3.1 Installing Uptime Kuma via native TrueNAS Apps.
+### 3.1 Installing Uptime Kuma via native TrueNAS Apps
 
 Install Uptime Kuma via TrueNAS Apps with such configuration:
 
@@ -114,7 +123,7 @@ Install Uptime Kuma via TrueNAS Apps with such configuration:
 
 ![Uptime Kuma App Configuration](../images/uptime-kuma-app-config.png)
 
-### 3.2 Installing Uptime Kuma via YAML. 
+### 3.2 Installing Uptime Kuma via YAML 
 
 Use this YAML code to install Dozzle:
 
@@ -157,7 +166,7 @@ Setting up notifications:
 
 # 4. FileBrowser Quantum - installation and configuration
 
-**Installing FileBrowser Quantum via native TrueNAS Apps.**
+**Installing FileBrowser Quantum via native TrueNAS Apps**
 
 Install FileBrowser Quantum via TrueNAS Apps with such configuration:
 
@@ -199,7 +208,7 @@ tank [POOL]
    └─ code-server [DATASET] - Dataset Preset: `Apps`
 ```
 
-### 5.1 Installing Code Server via native TrueNAS Apps. 
+### 5.1 Installing Code Server via native TrueNAS Apps 
 
 Install Code Server via TrueNAS Apps with such configuration:
 
@@ -233,7 +242,7 @@ Install Code Server via TrueNAS Apps with such configuration:
 
 ![Code Server App Configuration](../images/code-server-app-config.png)
 
-### 5.2 Installing Code Server via YAML. 
+### 5.2 Installing Code Server via YAML
 
 Use this YAML code to install Code Server:
 
@@ -254,8 +263,6 @@ services:
       - TZ=Europe/Warsaw
       - PASSWORD=EnterYourCodeServerPassword
 ```
-
-TODO: UPDATE CODE SERVER IMAGE
 
 ### 5.3 Access your location directory from Code Server
 
@@ -305,20 +312,81 @@ Create datasets:
 ```js
 tank [POOL]
 └─ configs [DATASET] - Dataset Preset: `Apps`
+   ├─ system [DATASET] - Dataset Preset: `Apps`
+   |  └─ app-icons [DATASET] - Dataset Preset: `Apps`
+          └─ homepage-app-icon.png [FILE]
    └─ homepage [DATASET] - Dataset Preset: `Apps`
 ```
+Link to [homepage-app-icon.png file](../app-icons/homepage-app-icon.png)
 
-### 6.1 Installing Homepage via native TrueNAS Apps. 
+### 6.1 Installing Homepage via native TrueNAS Apps 
 
 Install Homepage via TrueNAS Apps with such configuration:
 
 ### 6.2 Installing Homepage via YAML. 
 
-Use this YAML code to install Dozzle:
+Use this YAML code to install Homepage:
 
 ```yml
 services:
 ```
+
+Edit the `/mnt/.ix-apps/app_configs/homepage/metadata.yaml` file, and set:
+```yaml
+"custom_app": true
+"human_version": "v1.13.3"
+"metadata":
+  "app_version": "v1.13.3"
+  "capabilities": []
+  "categories":
+  - "productivity"
+  "changelog_url": "https://github.com/gethomepage/homeapge/releases"
+  "description": "Homepage is a modern, secure, highly customizable application dashboard."
+  "home": "https://gethomepage.dev/"
+  "host_mounts":
+  - "description": "Docker socket"
+    "host_path": "/var/run/docker.sock"
+  # "icon": "https://media.sys.truenas.net/apps/homepage/icons/icon.png"
+  "icon": "file:///mnt/tank/configs/system/app-icons/homepage-app-icon.png"
+  "keywords":
+  - "dashboard"
+  "maintainers": []
+  "name": "homepage"
+  "run_as_context":
+  - "description": "Container [homepage] runs as non-root user and group."
+    "gid": 568
+    "group_name": "Host group is [apps]"
+    "uid": 568
+    "user_name": "Host user is [apps]"
+  "sources":
+  - "https://gethomepage.dev/"
+  - "https://github.com/gethomepage/homepage"
+  "title": "Homepage"
+  "train": "community"
+  "version": "1.3.13"
+"migrated": false
+"notes": null
+"portals":
+  "Web UI": "http://0.0.0.0:3000"
+"version": "1.3.13"
+```
+Set version based on docker image that you use.
+
+- On TrueNAS you can use nano to edit the metadata.yaml file:
+
+    ```bash
+    cd /mnt/.ix-apps/app_configs/homepage
+    ```
+
+    ```bash
+    sudo nano metadata.yaml
+    ```
+
+- Once you've finished editing, press [Ctrl] + [O] to save your changes
+
+- Then press [Ctrl] + [X] to exit the nano editor.
+
+You can also copy my pre-made [homepage-metadata.yaml](../yaml/homepage-metadata.yaml) file. Just rename it to metadata.yaml and replace the original version with this one. You'll likely need to update the version to match your actual one.
 
 <p align="right"><sub>____________</sub></p>
 <p align="right">
