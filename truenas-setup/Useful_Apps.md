@@ -323,12 +323,27 @@ Link to [homepage-app-icon.png file](../app-icons/homepage-app-icon.png)
 
 Install Homepage via TrueNAS Apps with such configuration:
 
+![alt text](image.png)
+
 ### 6.2 Installing Homepage via YAML. 
 
 Use this YAML code to install Homepage:
 
 ```yml
 services:
+  homepage:
+    container_name: homepage
+    image: ghcr.io/gethomepage/homepage:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /mnt/tank/configs/homepage:/app/config
+    environment:
+      TZ: Europe/Warsaw
+      HOMEPAGE_ALLOWED_HOSTS: 192.168.1.50:3000 # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
+      PUID: 568
+      PGID: 568
 ```
 
 Edit the `/mnt/.ix-apps/app_configs/homepage/metadata.yaml` file, and set:
@@ -346,8 +361,8 @@ Edit the `/mnt/.ix-apps/app_configs/homepage/metadata.yaml` file, and set:
   "host_mounts":
   - "description": "Docker socket"
     "host_path": "/var/run/docker.sock"
-  # "icon": "https://media.sys.truenas.net/apps/homepage/icons/icon.png"
-  "icon": "file:///mnt/tank/configs/system/app-icons/homepage-app-icon.png"
+  "icon": "https://media.sys.truenas.net/apps/homepage/icons/icon.png"
+  # "icon": "file:///mnt/tank/configs/system/app-icons/homepage-app-icon.png"
   "keywords":
   - "dashboard"
   "maintainers": []
@@ -372,7 +387,7 @@ Edit the `/mnt/.ix-apps/app_configs/homepage/metadata.yaml` file, and set:
 ```
 Set version based on docker image that you use.
 
-- On TrueNAS you can use nano to edit the metadata.yaml file:
+**On TrueNAS you can use nano to edit the metadata.yaml file:**
 
     ```bash
     cd /mnt/.ix-apps/app_configs/homepage
@@ -386,7 +401,7 @@ Set version based on docker image that you use.
 
 - Then press [Ctrl] + [X] to exit the nano editor.
 
-You can also copy my pre-made [homepage-metadata.yaml](../yaml/homepage-metadata.yaml) file. Just rename it to metadata.yaml and replace the original version with this one. You'll likely need to update the version to match your actual one.
+**You can also copy my pre-made [homepage-metadata.yaml](../yaml/homepage-metadata.yaml) file. Just rename it to metadata.yaml and replace the original version with this one. You'll likely need to update the version to match your actual one.**
 - open directory"
   ```bash
   cd /mnt/.ix-apps/app_configs/homepage
