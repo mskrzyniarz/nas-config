@@ -8,6 +8,7 @@
 [3. Uptime Kuma](#3-uptime-kuma---installation-and-configuration)  
 [4. FileBrowser Quantum](#4-filebrowser-quantum---installation-and-configuration)  
 [5. Code Server](#5-code-server---installation-and-configuration)  
+[6. Homepage](#6-homepage---installation-and-configuration)  
 
 
 This file contains instructions for installing and configuring useful applications (which will come in handy for day-to-day NAS management, installing and modifying applications, etc.). \
@@ -156,11 +157,37 @@ Setting up notifications:
 
 # 4. FileBrowser Quantum - installation and configuration
 
- file manager with source configuration, modern authentication, office support, and lightning-fast search.
+**Installing FileBrowser Quantum via native TrueNAS Apps.**
 
+Install FileBrowser Quantum via TrueNAS Apps with such configuration:
 
+- In the field `Admin Password` enter your admin password
 
-# TODO:
+- In the `User and Group Configuration` section set:
+  - In the field `User ID` enter `0`
+
+  - In the field `Group ID` enter `0`  
+
+    :exclamation: **IMPORTANT: I use the root user (`0`) and group (`0`) to allow the application to access all directories and avoid problems with permissions. This isn’t a problem for me as I only use this application on the local network, but if you intend to grant public access, set the appropriate user and group.**
+
+- In the field `Port Number` enter: `30334`
+
+- In the `Storage Configuration`/`Config Storage` section, in the `Type` field select `ixVolume (Dataset created automatically by the system)`.  
+  It’s just a file browser, so I don’t need to back up the configuration files. At least for me, it doesn’t matter.
+
+- In the `Storage Configuration` section, add `Additional Storage` witch such settings:
+
+  _(This setting allows you to manage files across the entire `/tank` pool)_
+
+  -  In the `Type` field, select the `Host Path (Path that already exists on the system)` option.
+
+  -  In the `Mount Path`, enter `/tank`
+
+  -  In the `Host Path` field, enter `/mnt/tank`
+  
+- Leave the other fields at their default values
+
+![FileBrowser Quantum Configuration](../images/filebrowser-quantum-configuration.png)
 
 ## 5. Code Server - installation and configuration
 
@@ -182,20 +209,25 @@ Install Code Server via TrueNAS Apps with such configuration:
   - `Name`: `PASSWORD`
   - `Value`: EnterYourCodeServerPassword
 
+- In the `User and Group Configuration` section, set:
+
+  - In the `User ID` field, enter: `568`
+
+  - In the `Group ID` field, enter: `568`
+
 - In the field `Port Number` enter: `8443`
 
-- Select the `Use Deprecated Volumes` checkbox
+- In the section `Storage Configuration`:
 
-- Set `Local Storage (Deprecated)` to:
-  -  `Type`: `ixVolume (Dataset created automatically by the system)`
+  - Leave the `Use Deprecated Volumes` checkbox `unchecked`
 
-- Set `Config Storage (Deprecated)` to:
-  -  `Type`: `Host Path (Path that already exists on the system)`
-  -  `Host Path`: `/mnt/tank/configs/code-server`
+  - Set `Home Directory Storage` to:
+    -  `Type`: `ixVolume (Dataset created automatically by the system)`
 
-- Set `Project Storage (Deprecated)` to:
-  -  `Type`: `Host Path (Path that already exists on the system)`
-  -  `Host Path`: `/mnt/tank`
+  - Add `Additional Storage` with settings:
+    -  `Type`: `Host Path (Path that already exists on the system)`
+    -  `Mount Path`: `/config`
+    -  `Host Path`: `/mnt/tank/configs/code-server`
 
 - Leave the other fields at their default values
 
@@ -203,7 +235,7 @@ Install Code Server via TrueNAS Apps with such configuration:
 
 ### 5.2 Installing Code Server via YAML. 
 
-Use this YAML code to install Dozzle:
+Use this YAML code to install Code Server:
 
 ```yml
 services:
@@ -214,7 +246,7 @@ services:
       - 8443:8443
     volumes:
       - /mnt/tank/configs/code-server:/config
-      - /mnt/tank:/config/workspace
+      - /mnt/tank/configs:/home/coder/apps-config
     restart: unless-stopped
     environment:
       - PUID=568
@@ -224,29 +256,49 @@ services:
 ```
 
 TODO: UPDATE CODE SERVER IMAGE
-![alt text](image.png)
 
-My preferences:  
-Open `Settings`/`Workbench`/`Appearance`  
-set `Color Theme` to `Dark (Visual Studio)`
+### 5.3 Access your location directory from Code Server
 
-Extensions: 
-- YAML (redhat.vscode-yaml)
-- XML (redhat.vscode-xml)
-- Prettier - Code formatter (esbenp.prettier-vscode)
-- Code Spell Checker (streetsidesoftware.code-spell-checker)
+To access some directory from drive in Code Server:
+
+- Got to TrueNAS `Apps` page.
+
+- Find `Code Server` on the list and select it.
+
+- Press the `Edit` button.
+
+- In the section `Storage Configuration` add `Additional Storage` with settings:
+    -  `Type`: `Host Path (Path that already exists on the system)`
+    -  `Mount Path`: `/home/coder/apps-config`
+    -  `Host Path`: `/mnt/tank/configs`
+
+- Save changes.
+
+![Access directory from Code Server](../images/access-directory-from-code-server.png)
+
+This setting will cause the `/mnt/tank/configs` directory to be displayed as follows in Code Server: 
+
+![Code Server with mounted local directory](../images/code-server-with-mounted-local-directory.png)
+
+### 5.4 My Code Server preferences and installed extensions
+
+**My preferences:**
+- Open `Settings`/`Workbench`/`Appearance`  
+  - set `Color Theme` to `Dark (Visual Studio)`
+
+**Installed Extensions:**
+- YAML (Identifier: redhat.vscode-yaml)
+- XML (Identifier: redhat.vscode-xml)
+- Prettier - Code formatter (Identifier: esbenp.prettier-vscode)
+- Code Spell Checker (Identifier: streetsidesoftware.code-spell-checker)
 - TODO Highlight (Identifier: wayou.vscode-todo-highlight)
-- vscode-icons (vscode-icons-team.vscode-icons)
-- GitLens (eamodio.gitlens)
-- shell-format (foxundermoon.shell-format)
-- IntelliJ IDEA Keybindings (k--kato.intellij-idea-keybindings)
+- vscode-icons (Identifier: vscode-icons-team.vscode-icons)
+- GitLens (Identifier: eamodio.gitlens)
+- shell-format (Identifier: foxundermoon.shell-format)
+- IntelliJ IDEA Keybindings (Identifier: k--kato.intellij-idea-keybindings)
 
 
-
-
-
-
-## 6. Homepage / Homarr  - installation and configuration
+## 6. Homepage - installation and configuration
 
 Create datasets:
 

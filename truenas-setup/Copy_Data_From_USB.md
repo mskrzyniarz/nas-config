@@ -109,7 +109,7 @@ Press the `+ ADD NEW LINK` button and select:
 ![Add FileBrowser Quantum sidebar link](../images/add-quantum-sidebar-link.png)
 
 > [!NOTE]
-> Now you can use FileBrowser Quantum WebUI to copy files between USB and NAS drive.
+> **Now you can use FileBrowser Quantum WebUI to copy files between USB and NAS drive.**
 
 
 ## Step 5: Unmount USB drive
