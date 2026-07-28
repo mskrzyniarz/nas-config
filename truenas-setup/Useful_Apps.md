@@ -1,22 +1,30 @@
 [← Back to the main guide's steps](../README.md)
 
-# Installing_Useful_Apps
+# Useful Apps
 
 **Table of Contents**   
 [1. List of applications](#1-list-of-applications)  
-[2. Dozzle - installation and configuration](#2-dozzle---installation-and-configuration)
+[2. Dozzle](#2-dozzle---installation-and-configuration)  
+[3. Uptime Kuma](#3-uptime-kuma---installation-and-configuration)  
+[4. FileBrowser Quantum](#4-filebrowser-quantum---installation-and-configuration)  
+[5. Code Server](#5-code-server---installation-and-configuration)  
+
 
 This file contains instructions for installing and configuring useful applications (which will come in handy for day-to-day NAS management, installing and modifying applications, etc.). \
 These are apps you simply can't do without (alternatively, you can install similar apps that serve the same purpose).
 
 ## 1. List of applications
 
-| Name        | Description                                                                                                                                                                | Documentation                                          |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------|
-| Dozzle      | Dozzle is a lightweight, web-based application for monitoring Docker logs in real time.                                                                                    | [GitHub page](https://github.com/amir20/dozzle)        |
-| Uptime Kuma | Uptime Kuma is an easy-to-use self-hosted monitoring tool. It allows you to monitor uptime - for example, for Docker containers and set up various types of notifications. | [GitHub page](https://github.com/louislam/uptime-kuma) |
-| Code Server | Allows to run instance of VS Code that you can access from your browser. Useful for easy editing and creating files.                                                       | [GitHub page](https://github.com/coder/code-server)    |
-| Homepage    | Allows you to create one panel to manage all your services.                                                                                                                | [GitHub page](https://github.com/gethomepage/homepage) |
+| Name                | Description                                                                                                                                                                | Documentation                                              |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| Dozzle              | Dozzle is a lightweight, web-based application for monitoring Docker logs in real time.                                                                                    | [GitHub page](https://github.com/amir20/dozzle)            |
+| Uptime Kuma         | Uptime Kuma is an easy-to-use self-hosted monitoring tool. It allows you to monitor uptime - for example, for Docker containers and set up various types of notifications. | [GitHub page](https://github.com/louislam/uptime-kuma)     |
+| FileBrowser Quantum | It is a file manager with source configuration, modern authentication, office support, and lightning-fast search.                                                          | [GitHub page](https://github.com/gtsteffaniak/filebrowser) |
+| Code Server         | Allows to run instance of VS Code that you can access from your browser. Useful for easily editing all kinds of files.                                                     | [GitHub page](https://github.com/coder/code-server)        |
+| Homepage            | Allows you to create one panel to manage all your services.                                                                                                                | [GitHub page](https://github.com/gethomepage/homepage)     |
+
+ file manager with source configuration, modern authentication, office support, and lightning-fast search.
+
 
 ## 2. Dozzle - installation and configuration
 Create datasets:
@@ -145,7 +153,16 @@ Setting up notifications:
 - Press the `Set Up Notification` button
 - Setup your notification (ex. Gotify)
 
-## 4. Code Server - installation and configuration
+
+# 4. FileBrowser Quantum - installation and configuration
+
+ file manager with source configuration, modern authentication, office support, and lightning-fast search.
+
+
+
+# TODO:
+
+## 5. Code Server - installation and configuration
 
 Create datasets:
 
@@ -155,7 +172,7 @@ tank [POOL]
    └─ code-server [DATASET] - Dataset Preset: `Apps`
 ```
 
-### 4.1 Installing Code Server via native TrueNAS Apps. 
+### 5.1 Installing Code Server via native TrueNAS Apps. 
 
 Install Code Server via TrueNAS Apps with such configuration:
 
@@ -184,7 +201,7 @@ Install Code Server via TrueNAS Apps with such configuration:
 
 ![Code Server App Configuration](../images/code-server-app-config.png)
 
-### 4.2 Installing Code Server via YAML. 
+### 5.2 Installing Code Server via YAML. 
 
 Use this YAML code to install Dozzle:
 
@@ -206,7 +223,30 @@ services:
       - PASSWORD=EnterYourCodeServerPassword
 ```
 
-## 5. Homepage / Homarr  - installation and configuration
+TODO: UPDATE CODE SERVER IMAGE
+![alt text](image.png)
+
+My preferences:  
+Open `Settings`/`Workbench`/`Appearance`  
+set `Color Theme` to `Dark (Visual Studio)`
+
+Extensions: 
+- YAML (redhat.vscode-yaml)
+- XML (redhat.vscode-xml)
+- Prettier - Code formatter (esbenp.prettier-vscode)
+- Code Spell Checker (streetsidesoftware.code-spell-checker)
+- TODO Highlight (Identifier: wayou.vscode-todo-highlight)
+- vscode-icons (vscode-icons-team.vscode-icons)
+- GitLens (eamodio.gitlens)
+- shell-format (foxundermoon.shell-format)
+- IntelliJ IDEA Keybindings (k--kato.intellij-idea-keybindings)
+
+
+
+
+
+
+## 6. Homepage / Homarr  - installation and configuration
 
 Create datasets:
 
@@ -216,11 +256,11 @@ tank [POOL]
    └─ homepage [DATASET] - Dataset Preset: `Apps`
 ```
 
-### 5.1 Installing Homepage via native TrueNAS Apps. 
+### 6.1 Installing Homepage via native TrueNAS Apps. 
 
 Install Homepage via TrueNAS Apps with such configuration:
 
-### 5.2 Installing Homepage via YAML. 
+### 6.2 Installing Homepage via YAML. 
 
 Use this YAML code to install Dozzle:
 

@@ -37,7 +37,7 @@ The TrueNAS version for which this manual was written is **25.10.4**.
 
 4. [SMB configuration (attach a network drive on Windows OS to access files from the NAS)](./truenas-setup/Pools_Configuration.md)
 
-5. [Installing useful apps](./truenas-setup/Installing_Useful_Apps.md)
+5. [Useful Apps](./truenas-setup/Useful_Apps.md)
 
 6. [ARR Stack: General](./truenas-setup/ARR_Stack.md)
 
