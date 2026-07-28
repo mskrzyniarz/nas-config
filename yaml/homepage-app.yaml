@@ -1,4 +1,4 @@
-"app_version": "custom"
+"app_version": "v1.13.3"
 "capabilities": []
 "description": "Homepage is a modern, secure, highly customizable application dashboard."
 "home": "https://gethomepage.dev/"
@@ -8,8 +8,15 @@
 "last_update": "2026-07-29 00:00:00"
 "maintainers": []
 "name": "homepage"
-"run_as_context": []
-"sources": []
+"run_as_context":
+- "description": "Container [homepage] runs as non-root user and group."
+  "gid": 568
+  "group_name": "Host group is [apps]"
+  "uid": 568
+  "user_name": "Host user is [apps]"
+"sources":
+- "https://gethomepage.dev/"
+- "https://github.com/gethomepage/homepage"
 "title": "Homepage"
 "train": "community"
 "version": "1.13.3"

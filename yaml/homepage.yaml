@@ -9,6 +9,6 @@ services:
       - /mnt/tank/configs/homepage:/app/config
     environment:
       TZ: Europe/Warsaw
-      HOMEPAGE_ALLOWED_HOSTS: 192.168.1.50 # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
+      HOMEPAGE_ALLOWED_HOSTS: 192.168.1.50:3000 # required, may need port. See gethomepage.dev/installation/#homepage_allowed_hosts
       PUID: 568
       PGID: 568

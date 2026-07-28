@@ -399,9 +399,13 @@ You can also copy my pre-made [homepage-metadata.yaml](../yaml/homepage-metadata
   ```bash
   sudo curl -o metadata.yaml https://raw.githubusercontent.com/mskrzyniarz/nas-config/refs/heads/main/yaml/homepage-metadata.yaml
   ```
-- open settings of version 1.0.0:
+- create version 1.13.3 from 1.0.0:
   ```bash
-  cd versions/1.0.0
+  cp versions/1.0.0 versions/1.13.3
+  ```
+- open settings of version 1.13.3:
+  ```bash
+  cd versions/1.13.3
   ```
 - create backup of app.yaml file"
   ```bash
