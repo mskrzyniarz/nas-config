@@ -1,0 +1,15 @@
+"app_version": "custom"
+"capabilities": []
+"description": "Homepage is a modern, secure, highly customizable application dashboard."
+"home": "https://gethomepage.dev/"
+"host_mounts":
+- "description": "Docker socket"
+  "host_path": "/var/run/docker.sock"
+"last_update": "2026-07-29 00:00:00"
+"maintainers": []
+"name": "homepage"
+"run_as_context": []
+"sources": []
+"title": "Homepage"
+"train": "community"
+"version": "1.13.3"

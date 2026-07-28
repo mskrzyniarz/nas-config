@@ -387,6 +387,30 @@ Set version based on docker image that you use.
 - Then press [Ctrl] + [X] to exit the nano editor.
 
 You can also copy my pre-made [homepage-metadata.yaml](../yaml/homepage-metadata.yaml) file. Just rename it to metadata.yaml and replace the original version with this one. You'll likely need to update the version to match your actual one.
+- open directory"
+  ```bash
+  cd /mnt/.ix-apps/app_configs/homepage
+  ```
+- create backup of metadata.yaml file"
+  ```bash
+  sudo mv metadata.yaml metadata_bkp.yaml
+  ```
+- download pre-made metadata.yaml file"
+  ```bash
+  sudo curl -o metadata.yaml https://raw.githubusercontent.com/mskrzyniarz/nas-config/refs/heads/main/yaml/homepage-metadata.yaml
+  ```
+- open settings of version 1.0.0:
+  ```bash
+  cd versions/1.0.0
+  ```
+- create backup of app.yaml file"
+  ```bash
+  sudo mv app.yaml app_bkp.yaml
+  ```
+- download pre-made app.yaml file"
+  ```bash
+  sudo curl -o app.yaml https://raw.githubusercontent.com/mskrzyniarz/nas-config/refs/heads/main/yaml/homepage-app.yaml
+  ```
 
 <p align="right"><sub>____________</sub></p>
 <p align="right">
