@@ -41,8 +41,8 @@ Create datasets:
 
 ```js
 tank [POOL]
-└─ configs [DATASET] - Dataset Preset: `Apps`
-   └─ dozzle [DATASET] - Dataset Preset: `Apps`
+└─ configs [DATASET] - 'Dataset Preset': 'Apps'
+   └─ dozzle [DATASET] - 'Dataset Preset': 'Apps'
 ```
 
 ### 2.1 Installing Dozzle via native TrueNAS Apps
@@ -97,8 +97,8 @@ Create datasets:
 
 ```js
 tank [POOL]
-└─ configs [DATASET] - Dataset Preset: `Apps`
-   └─ uptime-kuma [DATASET] - Dataset Preset: `Apps`
+└─ configs [DATASET] - 'Dataset Preset': 'Apps'
+   └─ uptime-kuma [DATASET] - 'Dataset Preset': 'Apps'
 ```
 
 
@@ -204,8 +204,8 @@ Create datasets:
 
 ```js
 tank [POOL]
-└─ configs [DATASET] - Dataset Preset: `Apps`
-   └─ code-server [DATASET] - Dataset Preset: `Apps`
+└─ configs [DATASET] - 'Dataset Preset': 'Apps'
+   └─ code-server [DATASET] - 'Dataset Preset': 'Apps'
 ```
 
 ### 5.1 Installing Code Server via native TrueNAS Apps 
@@ -311,11 +311,11 @@ Create datasets:
 
 ```js
 tank [POOL]
-└─ configs [DATASET] - Dataset Preset: `Apps`
-   ├─ system [DATASET] - Dataset Preset: `Apps`
-   |  └─ app-icons [DATASET] - Dataset Preset: `Apps`
-          └─ homepage-app-icon.png [FILE]
-   └─ homepage [DATASET] - Dataset Preset: `Apps`
+└─ configs [DATASET] - 'Dataset Preset': 'Apps'
+   ├─ system [DATASET] - 'Dataset Preset': 'Apps'
+   |  └─ app-icons [DATASET] - 'Dataset Preset': 'Apps'
+   |     └─ homepage-app-icon.png [FILE]
+   └─ homepage [DATASET] - 'Dataset Preset': 'Apps'
 ```
 Link to [homepage-app-icon.png file](../app-icons/homepage-app-icon.png)
 
@@ -323,7 +323,28 @@ Link to [homepage-app-icon.png file](../app-icons/homepage-app-icon.png)
 
 Install Homepage via TrueNAS Apps with such configuration:
 
-![alt text](image.png)
+- Select the `Mount Docker Socket` checkbox
+
+- Add `Allowed Host`:
+  - `Host`: `YOUR_IP:3000`, ex. 192.168.1.50:3000
+
+- Add `Additional Environment Variable`:
+  - `Name`: `PUID`
+  - `Value`: `568`
+
+- Add `Additional Environment Variable`:
+  - `Name`: `PGID`
+  - `Value`: `568`
+
+- In the field `Port Number` enter: `3000`
+
+- In the section `Storage Configuration`/`Homepage Config Storage`, set:
+  -  `Type`: `Host Path (Path that already exists on the system)`
+  - In the field `Host Path`, enter: `/mnt/tank/configs/homepage`
+
+- Leave the other fields at their default values
+
+![Homepage TrueNAS App Configuration](../images/homepage-app-config.png)
 
 ### 6.2 Installing Homepage via YAML. 
 
@@ -402,34 +423,29 @@ Set version based on docker image that you use.
 - Then press [Ctrl] + [X] to exit the nano editor.
 
 **You can also copy my pre-made [homepage-metadata.yaml](../yaml/homepage-metadata.yaml) file. Just rename it to metadata.yaml and replace the original version with this one. You'll likely need to update the version to match your actual one.**
-- open directory"
+- open directory of homepage app:
   ```bash
   cd /mnt/.ix-apps/app_configs/homepage
   ```
-- create backup of metadata.yaml file"
+- create a backup of metadata.yaml file:
   ```bash
   sudo mv metadata.yaml metadata_bkp.yaml
   ```
-- download pre-made metadata.yaml file"
+- download pre-made metadata.yaml file:
   ```bash
   sudo curl -o metadata.yaml https://raw.githubusercontent.com/mskrzyniarz/nas-config/refs/heads/main/yaml/homepage-metadata.yaml
   ```
-- create version 1.13.3 from 1.0.0:
+- create version 1.13.3 from the version 1.0.0 (default custom app version):
   ```bash
-  cp versions/1.0.0 versions/1.13.3
+  cp -r versions/1.0.0 versions/1.13.3
   ```
-- open settings of version 1.13.3:
-  ```bash
-  cd versions/1.13.3
-  ```
-- create backup of app.yaml file"
-  ```bash
-  sudo mv app.yaml app_bkp.yaml
-  ```
-- download pre-made app.yaml file"
-  ```bash
-  sudo curl -o app.yaml https://raw.githubusercontent.com/mskrzyniarz/nas-config/refs/heads/main/yaml/homepage-app.yaml
-  ```
+- open `Apps` TrueNAS page
+
+- Find `homepage` app on the list and select it
+
+- Press the `Edit` button
+
+- Don't make any changes, just click the `Save` button.
 
 <p align="right"><sub>____________</sub></p>
 <p align="right">

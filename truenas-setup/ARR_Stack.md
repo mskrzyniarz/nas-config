@@ -16,33 +16,33 @@ Here is my datasets structure
 ```js
 tank [POOL]
 |
-├── configs [DATASET] - Dataset Preset: `Apps`
-|   ├─ bazarr [DATASET] - Dataset Preset: `Apps`
-|   ├─ dozzle [DATASET] - Dataset Preset: `Apps`
-|   ├─ jellyfin [DATASET] - Dataset Preset: `Apps`
-|   ├─ jellyseerr [DATASET] - Dataset Preset: `Apps`
-|   ├─ prowlarr [DATASET] - Dataset Preset: `Apps`
-|   ├─ qbittorrent [DATASET] - Dataset Preset: `Apps`
-|   ├─ radarr [DATASET] - Dataset Preset: `Apps`
-|   ├─ recyclarr [DATASET] - Dataset Preset: `Apps`
-|   ├─ sonarr [DATASET] - Dataset Preset: `Apps`
-|   └─ tdarr [DATASET] - Dataset Preset: `Apps`
+├── configs [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ bazarr [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ dozzle [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ jellyfin [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ jellyseerr [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ prowlarr [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ qbittorrent [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ radarr [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ recyclarr [DATASET] - 'Dataset Preset': 'Apps'
+|   ├─ sonarr [DATASET] - 'Dataset Preset': 'Apps'
+|   └─ tdarr [DATASET] - 'Dataset Preset': 'Apps'
 |
-├── media [DATASET] - Dataset Preset: `Apps`
+├── media [DATASET] - 'Dataset Preset': 'Apps'
 |   ├─ books [FOLDER]
 |   ├─ movies [FOLDER]
 |   ├─ music [FOLDER]
 |   └─ tv [FOLDER]
 |
-└── downloads [DATASET] - Dataset Preset: `Apps` 
+└── downloads [DATASET] - 'Dataset Preset': 'Apps' 
     |
-    ├── torrents [DATASET] - Dataset Preset: `Apps`
+    ├── torrents [DATASET] - 'Dataset Preset': 'Apps'
     |   ├─ books [FOLDER]
     |   ├─ movies [FOLDER]
     |   ├─ music [FOLDER]
     |   └─ tv [FOLDER]
     |
-    └── usenet [DATASET] - Dataset Preset: `Apps`
+    └── usenet [DATASET] - 'Dataset Preset': 'Apps'
         |
         ├─ incomplete [FOLDER]
         |  ├─ books [FOLDER]
