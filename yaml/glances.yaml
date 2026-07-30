@@ -1,0 +1,48 @@
+services:
+  glances:
+    container_name: glances
+    image: nicolargo/glances:latest-full
+    cap_add:
+      - DAC_OVERRIDE
+      - FOWNER
+      - SETGID
+      - SETUID
+      - SYS_PTRACE
+    cap_drop:
+      - ALL
+    user: "0:0"
+    group_add:
+      - 568
+      - 999
+    pid: host
+    ports:
+      - 61208:61208
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /etc/os-release:/etc/os-release:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /mnt/tank:/mnt/tank:ro
+      - /mnt/apps:/mnt/apps:ro
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Warsaw
+      GLANCES_OPT: "--webserver --port 61208 --password"
+      NVIDIA_VISIBLE_DEVICES: void
+      UMASK: "002"
+      UMASK_SET: "002"
+    secrets:
+      - source: glances_password
+        target: /root/.config/glances/glances.pwd
+
+secrets:
+  glances_password:
+    file: /mnt/tank/configs/glances/glances_password
+
+x-portals:
+  - host: 0.0.0.0
+    name: Web UI
+    path: /
+    port: 61208
+    scheme: http

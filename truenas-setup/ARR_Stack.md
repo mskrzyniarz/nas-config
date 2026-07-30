@@ -7,10 +7,6 @@
 
 ## 1. Storage structure
 
-
-
-/mnt/tank/configs/dozzle
-
 Here is my datasets structure
 
 ```js
@@ -28,13 +24,13 @@ tank [POOL]
 |   ├─ sonarr [DATASET] - 'Dataset Preset': 'Apps'
 |   └─ tdarr [DATASET] - 'Dataset Preset': 'Apps'
 |
-├── media [DATASET] - 'Dataset Preset': 'Apps'
-|   ├─ books [FOLDER]
-|   ├─ movies [FOLDER]
-|   ├─ music [FOLDER]
-|   └─ tv [FOLDER]
-|
-└── downloads [DATASET] - 'Dataset Preset': 'Apps' 
+└── data [DATASET] - 'Dataset Preset': 'Apps'
+    |
+    ├── media [DATASET] - 'Dataset Preset': 'Apps'
+    |   ├─ books [FOLDER]
+    |   ├─ movies [FOLDER]
+    |   ├─ music [FOLDER]
+    |   └─ tv [FOLDER]
     |
     ├── torrents [DATASET] - 'Dataset Preset': 'Apps'
     |   ├─ books [FOLDER]
@@ -59,16 +55,21 @@ tank [POOL]
 
 - Create datasets:
   ```
-  /mnt/tank/media
-  /mnt/tank/downloads
-  /mnt/tank/downloads/torrents
-  /mnt/tank/downloads/usenet
+  /mnt/tank/data
+  /mnt/tank/data/media
+  /mnt/tank/data/torrents
+  /mnt/tank/data/usenet
   ```
 
-- Create folders according to the structure shown above.
+- Create folders according to the structure shown above. Just open a shell and enter these commands:
+  ```bash
+  mkdir -p /mnt/tank/data/{usenet/{incomplete,complete}/{books,movies,music,tv},media/{books,movies,music,tv}}
+  ```
+  ```bash
+  mkdir -p /mnt/tank/data/{torrents/{books,movies,music,tv},media/{books,movies,music,tv}}
+  ```
 
-- Now you need to add the appropriate permissions for the folders inside the newly created datasets. \
-  The easiest way to do this is to edit the permissions for each of the newly created datasets and follow these steps:
+- The easiest way to do this is to edit the permissions of the `data` dataset and recursively apply the permissions to all of its children:
   - select the `Apply permissions recursively` checkbox \
     If a dialog box appears with the warning "Setting permissions recursively affects this directory and any others below it. This can make data inaccessible." confirm the change in the dialog box.
 
@@ -77,45 +78,5 @@ tank [POOL]
 
   - press the `Save Access Control List` button
 
-    ![ACL of media dataset](../images/acl-of-media-dataset.png)
+    ![ACL of media dataset](../images/acl-of-data-dataset.png)
 
-
-
-
-
-
-<!-- Check ACL (Permissions / Edit) of each of newly created dataset, it should look like that:  
-![ARR Stack datasets structure](../images/arr-stack-datasets-structure.png) -->
-
-
-
-<!-- Create folders inside the datasets by running those command, one by one:
-```bash
-mkdir -p /mnt/tank/media/{books,movies,music,tv}
-```
-```bash
-mkdir -p /mnt/downloads/torrents/{books,movies,music,tv}
-```
-```bash
-mkdir -p /mnt/downloads/usenet/{books,movies,music,tv}
-``` -->
-
-<!-- Check if `Apps` user/group has proper permissions to datasets and folders. \
-This should be set automatically since we selected the `Apps` preset when creating the dataset, but we should verify this before proceeding to install and configure all the required applications. \
-Permissions for User/Group should look like that: `775/664`. \
-To set permissions, run:
-```
-sudo chown -R $USER:$GROUP /mnt/tank/media
-sudo chmod -R a=,a+rX,u+w,g+w /mnt/tank/media
-```
-TrueNAS `Apps` `User (PUID)`/`Group (PGUID)` is `568`/`568`, so to set the folder ownership, run: \
-`sudo chown -R 568:568 /mnt/tank/media`. -->
-
-
-## 2. qBitTorrent
-
-
-<p align="right"><sub>____________</sub></p>
-<p align="right">
-  <a href="../truenas-setup/next-setp">Next step →</a>
-</p>

@@ -1,0 +1,46 @@
+services:
+  qbittorrent:
+    container_name: qbittorrent
+    image: ghcr.io/hotio/qbittorrent
+    cap_add:
+      - NET_ADMIN
+    user: '0:0'
+    ports:
+      - 8080:8080
+      - 51820:51820  # enter the port number from the Wireguard config file here
+      - 51820:51820/udp  # enter the port number from the Wireguard config file here
+    volumes:
+      - /mnt/tank/configs/qbittorrent:/config
+      - /mnt/tank/data/torrents/:/data/torrents/
+    restart: unless-stopped
+    environment:
+      - PUID=568
+      - PGID=568
+      - UMASK=002
+      - TZ=Europe/Warsaw
+      - WEBUI_PORT=8080
+      - LIBTORRENT=v1
+      - VPN_ENABLED=true
+      - VPN_CONF=wg0
+      - VPN_PROVIDER=proton
+      - VPN_LAN_NETWORK=192.168.100.0/24 # enter your LAN network here
+      - VPN_LAN_LEAK_ENABLED=false
+      # - VPN_EXPOSE_PORTS_ON_LAN
+      - VPN_AUTO_PORT_FORWARD=51820 # enter the port number from the Wireguard config file here
+      # - VPN_PORT_REDIRECTS
+      - VPN_HEALTHCHECK_ENABLED=false
+      - VPN_NAMESERVERS=wg
+      # - VPN_INTERFACE_PREFIXES
+      - PRIVOXY_ENABLED=false
+      - UNBOUND_ENABLED=false
+      # - UNBOUND_NAMESERVERS
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+      - net.ipv6.conf.all.disable_ipv6=1
+
+x-portals:
+  - host: 0.0.0.0
+    name: Web UI
+    path: /
+    port: 8080
+    scheme: http

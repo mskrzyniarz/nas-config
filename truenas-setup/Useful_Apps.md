@@ -307,7 +307,7 @@ This setting will cause the `/mnt/tank/configs` directory to be displayed as fol
 
 ## 6. Homepage - installation and configuration
 
-Create datasets:
+Create datasets and folders structure like that:
 
 ```js
 tank [POOL]
@@ -316,6 +316,7 @@ tank [POOL]
    |  └─ app-icons [DATASET] - 'Dataset Preset': 'Apps'
    |     └─ homepage-app-icon.png [FILE]
    └─ homepage [DATASET] - 'Dataset Preset': 'Apps'
+      └─ images [FOLDER] - to provide images to Homepage app, ex. background image
 ```
 Link to [homepage-app-icon.png file](../app-icons/homepage-app-icon.png)
 
@@ -437,7 +438,7 @@ Set version based on docker image that you use.
   ```
 - create version 1.13.3 from the version 1.0.0 (default custom app version):
   ```bash
-  cp -r versions/1.0.0 versions/1.13.3
+  mv versions/1.0.0 versions/1.13.3
   ```
 - open `Apps` TrueNAS page
 
