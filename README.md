@@ -32,73 +32,73 @@ The only manual changes I make to this pool are editing the metadata (the `/mnt/
 apps/
 └─ ix-apps/
    ├─ app_configs/
-   └─ ... // other files and directories crated be TrueNAS, ex. docker, catalogs, volumes, etc.
+   └─ ... - other files and directories crated be TrueNAS, ex. docker, catalogs, volumes, etc.
    ...
 ```
 
 **`tank` pool**  
 It contains all the data that’s important to me. I use it to store copies of my documents, photos, phone backups, app settings, etc.  
 Here’s my datasets structure (at least for now):
-```ts
+```
 tank [POOL]
-├─ apps [DATASET] // contains everything related to applications, it's also root folder of my GIT repo
-|  ├─ .gitignore [FILE] // excluding the 'config', 'data', 'backups' folders from GIT
-|  ├─ LICENSE [FILE] // terms and conditions for use, reproduction and distribution of this repo
-|  ├─ README.md [FILE] // the file you are currently reading
+├─ apps [DATASET] - contains everything related to applications, it's also root folder of my GIT repo
+|  ├─ .gitignore [FILE] - excluding the 'config', 'data', 'backups' folders from GIT
+|  ├─ LICENSE [FILE] - terms and conditions for use, reproduction and distribution of this repo
+|  ├─ README.md [FILE] - the file you are currently reading
 |  │
-|  ├─ compose [DATASET] // contains Docker Compose YAML file, env variables, etc.
-|  │  ├─ .gitignore [FILE] // excluding .env files and other folder/files containing sensitive data
-|  │  ├─ shared [DATASET] // contains shared env variables and settings
-|  │  │  ├─ .env [FILE] // shared env variable
-|  │  │  ├─ .env.example [FILE] // shared env variable without sensitive data
-|  │  │  ├─ compose.yml [FILE] // general shared apps settings
-|  │  │  └─ ... // other shared .env and *.yaml files, ex. compose.network.yaml
+|  ├─ compose [DATASET] - contains Docker Compose YAML file, env variables, etc.
+|  │  ├─ .gitignore [FILE] - excluding .env files and other folder/files containing sensitive data
+|  │  ├─ shared [DATASET] - contains shared env variables and settings
+|  │  │  ├─ .env [FILE] - shared env variable
+|  │  │  ├─ .env.example [FILE] - shared env variable without sensitive data
+|  │  │  ├─ compose.yml [FILE] - general shared apps settings
+|  │  │  └─ ... - other shared .env and *.yaml files, ex. compose.network.yaml
 |  │  │
-|  │  ├─ homepage [DATASET] // Homepage app (example)
-|  │  │  ├─ .env [FILE] // if required, variables intended solely for the Homepage app
-|  │  │  ├─ .env.example [FILE] // if required, .env file without sensitive data
-|  │  │  ├─ compose.yml [FILE] // definition of Homepage app in Docker compose YAML format
-|  │  │  ├─ metadata.yml [FILE] // metadata to overwrite the app information on the Apps page in TrueNAS
-|  │  │  └─ README.md [FILE] // contains instructions for installing and configuring the Homepage app
+|  │  ├─ homepage [DATASET] - Homepage app (example)
+|  │  │  ├─ .env [FILE] - if required, variables intended solely for the Homepage app
+|  │  │  ├─ .env.example [FILE] - if required, .env file without sensitive data
+|  │  │  ├─ compose.yml [FILE] - definition of Homepage app in Docker compose YAML format
+|  │  │  ├─ metadata.yml [FILE] - metadata to overwrite the app information on the Apps page in TrueNAS
+|  │  │  └─ README.md [FILE] - contains instructions for installing and configuring the Homepage app
 |  │  │
-|  │  └─ ... // datasets with docker-compose.yml files for other apps 
+|  │  └─ ... - datasets with docker-compose.yml files for other apps 
 |  │ 
-|  ├─ config [DATASET] // contains separate configurations for each application
-|  │  ├─ homepage [DATASET] // Homepage app configuration: layout, widgets, etc.
-|  │  └─ ... // config files for each application, mostly generated and managed entirely by the app
+|  ├─ config [DATASET] - contains separate configurations for each application
+|  │  ├─ homepage [DATASET] - Homepage app configuration: layout, widgets, etc.
+|  │  └─ ... - config files for each application, mostly generated and managed entirely by the app
 |  |
-|  ├─ resources [DATASET] // static files used be applications
-|  |  ├─ .gitignore [FILE] // excluding folders containing sensitive data, ex. certificates
-|  │  ├─ images [DATASET] // ex. background image for Homepage dashboard
-|  │  ├─ icons [DATASET] // app icons displayed on the TrueNAS page, icons used on Homepage dashboard, etc.
-|  │  └─ ... // other datasets with static files, ex. fonts, certificates, etc.
+|  ├─ resources [DATASET] - static files used be applications
+|  |  ├─ .gitignore [FILE] - excluding folders containing sensitive data, ex. certificates
+|  │  ├─ images [DATASET] - ex. background image for Homepage dashboard
+|  │  ├─ icons [DATASET] - app icons displayed on the TrueNAS page, icons used on Homepage dashboard, etc.
+|  │  └─ ... - other datasets with static files, ex. fonts, certificates, etc.
 |  |
-|  ├─ system [DATASET] //  scripts, configurations related with OS
-|  |  ├─ .gitignore [FILE] // if required, to exclude files nad folders containing sensitive data
-|  │  ├─ scripts [DATASET] // all kind of scripts
-|  │  │  ├─ ugreen-led/ [DATASET] // all scripts required to support UGREEN LEDs on my NAS
-|  │  │  └─ ... // other script files or datasets with scripts
-|  │  └─ ... // other datasets related with OS, ex. services, cron, templates, etc.
+|  ├─ system [DATASET] -  scripts, configurations related with OS
+|  |  ├─ .gitignore [FILE] - if required, to exclude files nad folders containing sensitive data
+|  │  ├─ scripts [DATASET] - all kind of scripts
+|  │  │  ├─ ugreen-led/ [DATASET] - all scripts required to support UGREEN LEDs on my NAS
+|  │  │  └─ ... - other script files or datasets with scripts
+|  │  └─ ... - other datasets related with OS, ex. services, cron, templates, etc.
 |  |
-|  ├─ data [DATASET] // app specific data
-|  │  ├─ immich [DATASET] // immich images
-|  │  ├─ paperless [DATASET] // documents, source images, etc.
-|  │  └─ ... // other apps data
+|  ├─ data [DATASET] - app specific data
+|  │  ├─ immich [DATASET] - immich images
+|  │  ├─ paperless [DATASET] - documents, source images, etc.
+|  │  └─ ... - other apps data
 |  |
-|  ├─ backups [DATASET] // mainly copies of databases from applications
+|  ├─ backups [DATASET] - mainly copies of databases from applications
 |  |  ├─ paperless/ [DATASET]
 |  |  |  └─ paperless.sql.gz
-|  |  └─ ... // other backups from the app, ex. /immich/database.sql.gz
+|  |  └─ ... - other backups from the app, ex. /immich/database.sql.gz
 |  |
-|  └─ docs [DATASET] // is used to document the entire homelab
-|     ├─ images/ [FOLDER] // images used in the documentation
-|     └─ ... // all the documentation files
+|  └─ docs [DATASET] - is used to document the entire homelab
+|     ├─ images/ [FOLDER] - images used in the documentation
+|     └─ ... - all the documentation files
 |
-├─ backups [DATASET] // user backups (I'll probably remove this once I’ve set up Cloudflare)
-|  ├─ user1 [DATASET] [SMB] // user1 backups, user1 with FullControl permissions
-|  └─ ... // backups of other users
+├─ backups [DATASET] - user backups (I'll probably remove this once I’ve set up Cloudflare)
+|  ├─ user1 [DATASET] [SMB] - user1 backups, user1 with FullControl permissions
+|  └─ ... - backups of other users
 |
-└─ data [DATASET] // media data, default ARR stack setup
+└─ data [DATASET] - media data, default ARR stack setup
    ├─ media [DATASET]
    ├─ torrents [DATASET]
    └─ usenet [DATASET]
