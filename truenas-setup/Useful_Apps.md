@@ -177,12 +177,12 @@ Install FileBrowser Quantum via TrueNAS Apps with such configuration:
 
   - In the field `Group ID` enter `0`  
 
-    :exclamation: **IMPORTANT: I use the root user (`0`) and group (`0`) to allow the application to access all directories and avoid problems with permissions. This isn’t a problem for me as I only use this application on the local network, but if you intend to grant public access, set the appropriate user and group.**
+    :exclamation: **IMPORTANT: I use the root user (`0`) and group (`0`) to allow the application to access all directories and avoid problems with permissions. This isn't a problem for me as I only use this application on the local network, but if you intend to grant public access, set the appropriate user and group.**
 
 - In the field `Port Number` enter: `30334`
 
 - In the `Storage Configuration`/`Config Storage` section, in the `Type` field select `ixVolume (Dataset created automatically by the system)`.  
-  It’s just a file browser, so I don’t need to back up the configuration files. At least for me, it doesn’t matter.
+  It's just a file browser, so I don't need to back up the configuration files. At least for me, it doesn't matter.
 
 - In the `Storage Configuration` section, add `Additional Storage` witch such settings:
 

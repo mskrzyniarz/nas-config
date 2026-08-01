@@ -39,12 +39,12 @@ apps/
 <!-- objectivec -->
 
 **`tank` pool**  
-It contains all the data that’s important to me. I use it to store copies of my documents, photos, phone backups, app settings, etc.  
-Here’s my datasets structure (at least for now):
-```dart
+It contains all the data that's important to me. I use it to store copies of my documents, photos, phone backups, app settings, etc.  
+Here's my datasets structure (at least for now):
+```python
 tank [POOL]
-├─ apps [DATASET] // contains everything related to applications, it's also root folder of my GIT repo
-|  ├─ .gitignore [FILE] // excluding the 'config', 'data', 'backups' folders from GIT
+├─ apps [DATASET] # contains everything related to applications, it is also root folder of my GIT repo
+|  ├─ .gitignore [FILE] # excluding the 'config', 'data', 'backups' folders from GIT
 |  ├─ LICENSE [FILE] // terms and conditions for use, reproduction and distribution of this repo
 |  ├─ README.md [FILE] // the file you are currently reading
 |  │
@@ -96,7 +96,7 @@ tank [POOL]
 |     ├─ images [FOLDER] // images used in the documentation
 |     └─ ... // all the documentation files
 |
-├─ backups [DATASET] // user backups (I'll probably remove this once I’ve set up Cloudflare)
+├─ backups [DATASET] // user backups (I will probably remove this once I have set up Cloudflare)
 |  ├─ user1 [DATASET] [SMB] // user1 backups, user1 with FullControl permissions
 |  └─ ... // backups of other users
 |
