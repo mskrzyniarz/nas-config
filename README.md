@@ -42,14 +42,14 @@ apps/
 **`tank` pool**  
 It contains all the data that's important to me. I use it to store copies of my documents, photos, phone backups, app settings, etc.  
 Here's my datasets structure (at least for now):
-```nim
+```crystal
 tank [POOL]
-├─ apps [DATASET] // contains everything related to applications, it is also root folder of my GIT repo
-|  ├─ .gitignore [FILE] // excluding the 'config', 'data', 'backups' folders from GIT
-|  ├─ LICENSE [FILE] // terms and conditions for use, reproduction and distribution of this repo
-|  ├─ README.md [FILE] // the file you are currently reading
+├─ apps [DATASET] # contains everything related to applications, it is also root folder of my GIT repo
+|  ├─ .gitignore [FILE] # excluding the 'config', 'data', 'backups' folders from GIT
+|  ├─ LICENSE [FILE] # terms and conditions for use, reproduction and distribution of this repo
+|  ├─ README.md [FILE] # the file you are currently reading
 |  │
-|  ├─ compose [DATASET] // contains Docker Compose YAML file, env variables, etc.
+|  ├─ compose [DATASET] # contains Docker Compose YAML file, env variables, etc.
 |  │  ├─ .gitignore [FILE] // excluding .env files and other folder/files containing sensitive data
 |  │  ├─ shared [DATASET] // contains shared env variables and settings
 |  │  │  ├─ .env [FILE] // shared env variable
